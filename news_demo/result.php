@@ -29,7 +29,7 @@ include "header.php";
                     } else {
                         echo "nmv";
                     }
-                    $search = $item->search($keyword, 0, 3);
+                    $search = $item->search($keyword, 1, 3);
                     var_dump($search);
                     ?>
                     <div class="col-lg-6">
