@@ -80,4 +80,14 @@ class Item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+
+    public function searchAll($keyword)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `conten` LIKE ?");
+        $keyword = "%$keyword%";
+        $sql->bind_param("s", $keyword);
+        $sql->execute();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
 }
