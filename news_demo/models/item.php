@@ -18,21 +18,21 @@ class Item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
-    public function getNewItem($start,$count)
+    public function getNewItem($start, $count)
     {
         $sql = self::$connection->prepare("SELECT * FROM items ORDER BY id DESC 
         LIMIT ?,?");
-        $sql->bind_param("ii", $start,$count);
+        $sql->bind_param("ii", $start, $count);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
-    public function getFeatureNewItem($start,$count)
+    public function getFeatureNewItem($start, $count)
     {
         $sql = self::$connection->prepare("SELECT * FROM items WHERE featured = 1 ORDER BY id DESC 
         LIMIT ?,?");
-        $sql->bind_param("ii", $start,$count);
+        $sql->bind_param("ii", $start, $count);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -47,7 +47,8 @@ class Item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
-    public function getCatNameById($category){
+    public function getCatNameById($category)
+    {
         $sql = self::$connection->prepare("SELECT categories.name FROM items,categories 
         WHERE items.category = categories.id
         AND category = ?");
@@ -57,11 +58,23 @@ class Item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
-    public function getAuthorName($author){
+    public function getAuthorName($author)
+    {
         $sql = self::$connection->prepare("SELECT author.name FROM items,author 
         WHERE items.author = author.id
         AND author = ?");
         $sql->bind_param("i", $author);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+
+    public function search($keyword, $start, $count)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `featured`=1 ORDER BY `created_at` DESC LIMIT ?,?");
+        $keyword = "%$keyword%";
+        $sql->bind_param("sii", $keyword, $start, $count);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
