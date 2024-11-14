@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -35,28 +35,28 @@
     require "models/category.php";
     $category = new Category;
     $item = new Item;
-    $getAllCats = $category->getAllCats();//Xuất Các items
+    $getAllCats = $category->getAllCats(); //Xuất Các items
 
 
-    $get3NewstItem = $item->getItemById(2);//Xuất Các Thời Sự
+    $get3NewstItem = $item->getItemById(2); //Xuất Các Thời Sự
 
 
 
-    foreach($get3NewstItem as $value){
-    //    echo $item->getCatNameById($value['category'])[0]['name']; 
-    // echo $value['category'].' '.$value['name'];
+    foreach ($get3NewstItem as $value) {
+        //    echo $item->getCatNameById($value['category'])[0]['name']; 
+        // echo $value['category'].' '.$value['name'];
 
 
-    // echo $item->getCatNameById($value['category'])[0]['name'];//xuất các Thời Sự
+        // echo $item->getCatNameById($value['category'])[0]['name'];//xuất các Thời Sự
 
-    // echo($value['image']);//kiemtra
-        
+        // echo($value['image']);//kiemtra
+
 
     }
     // var_dump($get3NewstItem);
 
 
-    
+
 
     ?>
     <!-- Topbar Start -->
@@ -124,16 +124,19 @@
                     <?php
                     foreach ($getAllCats as $value):
                     ?>
-                    <a href="archive.php?cate=<?php echo $value['id'] ?>" class="nav-item nav-link"><?php echo $value['name'] ?></a>
+                        <a href="archive.php?cate=<?php echo $value['id'] ?>" class="nav-item nav-link"><?php echo $value['name'] ?></a>
                     <?php endforeach ?>
                 </div>
-                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control border-0" placeholder="Keyword">
-                    <div class="input-group-append">
-                        <button class="input-group-text bg-primary text-dark border-0 px-3"><i
-                                class="fa fa-search"></i></button>
+                <form action="result.php" method="get">
+                    <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                        <input type="text" name="keyword" class="form-control border-0" placeholder="Keyword">
+                        <div class="input-group-append">
+                            <button type="submit" class="input-group-text bg-primary text-dark border-0 px-3"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
                     </div>
-                </div>
+                </form>
+
             </div>
         </nav>
     </div>

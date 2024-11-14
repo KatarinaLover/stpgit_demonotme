@@ -72,7 +72,7 @@ class Item extends Db
 
     public function search($keyword, $start, $count)
     {
-        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `featured`=1 ORDER BY `created_at` DESC LIMIT ?,?");
+        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `conten`LIKE ? LIMIT ?,?");
         $keyword = "%$keyword%";
         $sql->bind_param("sii", $keyword, $start, $count);
         $sql->execute(); //return an object

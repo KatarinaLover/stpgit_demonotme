@@ -29,8 +29,8 @@ include "header.php";
                     } else {
                         echo "nmv";
                     }
-                    $search = $item->search($keyword, 1, 3);
-                    var_dump($search);
+                    $search = $item->search($keyword, 0, 3);
+                    // var_dump($search);
                     ?>
                     <div class="col-lg-6">
                         <div class="position-relative mb-3">
