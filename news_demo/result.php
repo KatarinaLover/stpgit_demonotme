@@ -32,11 +32,12 @@ include "header.php";
                     $search = $item->search($keyword, 0, 3);
                     // var_dump($search);
                     ?>
-                    <div class="col-lg-6">
-                        <div class="position-relative mb-3">
-                            <?php
-                            foreach ($search as $value):
-                            ?>
+                    <?php
+                    foreach ($search as $value):
+                    ?>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+
                                 <img class="img-fluid w-100" src="anh/<?php echo $value['image'] ?>" style="object-fit: cover;">
 
                                 <div class="bg-white border border-top-0 p-4">
@@ -49,7 +50,7 @@ include "header.php";
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['tile'] ?></a>
                                     <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                                         rebum clita rebum dolor stet amet justo</p>
-                                <?php endforeach; ?>
+
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                     <div class="d-flex align-items-center">
@@ -61,18 +62,17 @@ include "header.php";
                                         <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
+            <?php include "social-sidebar.php" ?>
+
+
+
         </div>
     </div>
-    <?php include "social-sidebar.php" ?>
-
-
-
-</div>
-</div>
 </div>
 <!-- News With Sidebar End -->
 
