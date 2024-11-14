@@ -65,12 +65,14 @@ include "header.php";
                     </div>
                 </div>
             </div>
-
-
-            <?php
-            include "social-sidebar.php" ?>
         </div>
     </div>
+    <?php include "social-sidebar.php" ?>
+
+
+
+</div>
+</div>
 </div>
 <!-- News With Sidebar End -->
 

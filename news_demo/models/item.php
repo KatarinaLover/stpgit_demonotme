@@ -90,4 +90,25 @@ class Item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items;
     }
+
+    public function getAllItemsByCate($cate_id)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `category`= ? ");
+
+        $sql->bind_param("i", $cate_id);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getItemsByCate($cate_id, $start, $count)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `items` WHERE `category`= ? LIMIT ?,?");
+
+        $sql->bind_param("iii", $cate_id, $start, $count);
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
 }
