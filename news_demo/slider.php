@@ -16,7 +16,7 @@
                                         href=""><?php echo $item->getCatNameById($value['category'])[0]['name'];; ?></a>
                                     <a class="text-white" href=""><?php echo date_format(date_create_from_format("Y-m-d H:i:s", $value['created_at']), "M,d Y"); ?></a>
                                 </div>
-                                <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo $value['tile'] ?></a>
+                                <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo $value['title'] ?></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -38,7 +38,7 @@
                                             href=""><?php echo $item->getCatNameById($value['category'])[0]['name']; ?></a>
                                         <a class="text-white" href=""><small><?php echo date_format(date_create_from_format("Y-m-d H:i:s", $value['created_at']), "M, d Y"); ?></small></a>
                                     </div>
-                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo substr($value['tile'], 0, 40) ?>... </a>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo substr($value['title'], 0, 40) ?>... </a>
                                 </div>
                             </div>
                         </div>

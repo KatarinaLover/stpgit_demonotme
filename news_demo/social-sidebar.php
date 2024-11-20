@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+
     <!-- Social Follow Start -->
     <div class="mb-3">
         <div class="section-title mb-0">
@@ -62,7 +62,7 @@
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item->getCatNameById($value['category'])[0]['name']; ?></a>
                         <a class="text-body" href=""><small><?php echo date_format(date_create_from_format("Y-m-d H:i:s", $value['created_at']), "M, d Y"); ?></small></a>
                     </div>
-                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo substr($value['tile'], 0, 40) ?>...</a>
+                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="single.php?id=<?php echo $value['id'] ?>"><?php echo substr($value['title'], 0, 40) ?>...</a>
                 </div>
             </div>
            <?php endforeach ?>
@@ -104,4 +104,3 @@
         </div>
     </div>
     <!-- Tags End -->
-</div>

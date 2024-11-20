@@ -37,23 +37,23 @@
     $item = new Item;
     $getAllCats = $category->getAllCats(); //Xuất Các items
 
+    
+    // $get3NewstItem = $item->getItemById(10); //Xuất Các Thời Sự
 
-    $get3NewstItem = $item->getItemById(2); //Xuất Các Thời Sự
 
 
-
-    foreach ($get3NewstItem as $value) {
+    //foreach ($get3NewstItem as $value) {
         //    echo $item->getCatNameById($value['category'])[0]['name']; 
         // echo $value['category'].' '.$value['name'];
 
 
         // echo $item->getCatNameById($value['category'])[0]['name'];//xuất các Thời Sự
 
-        // echo($value['image']);//kiemtra
+        //echo($value['image']);//kiemtra
 
 
-    }
-    // var_dump($get3NewstItem);
+    //}
+   // var_dump($get3NewstItem);
 
 
 
@@ -129,10 +129,11 @@
                 </div>
                 <form action="result.php" method="get">
                     <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                        <input type="text" name="keyword" class="form-control border-0" placeholder="Keyword">
+                        <input name="keyword" type="text" class="form-control border-0" placeholder="Keyword">
                         <div class="input-group-append">
-                            <button type="submit" class="input-group-text bg-primary text-dark border-0 px-3"><i
-                                    class="fa fa-search"></i></button>
+                            <button type="submit" class="input-group-text bg-primary text-dark border-0 px-3">
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
                     </div>
                 </form>

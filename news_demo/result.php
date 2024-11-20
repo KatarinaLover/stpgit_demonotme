@@ -47,7 +47,7 @@ include "header.php";
                                         <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
 
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['tile'] ?></a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['title'] ?></a>
                                     <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                                         rebum clita rebum dolor stet amet justo</p>
 
@@ -66,9 +66,13 @@ include "header.php";
                         </div>
                     <?php endforeach; ?>
                 </div>
+                
+                       
             </div>
-            <?php include "social-sidebar.php" ?>
 
+            <div class="col-lg-4">
+                <?php include "social-sidebar.php" ?>
+            </div>
 
 
         </div>
